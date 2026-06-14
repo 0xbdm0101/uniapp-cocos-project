@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",
+    "module": "ES2015",
+    "lib": ["ES2015", "DOM"],
+    "strict": true,
+    "declaration": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "sourceMap": true,
+    "moduleResolution": "bundler",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "./assets",
+    "outDir": "./temp/scripts",
+    "experimentalDecorators": true
+  },
+  "include": [
+    "assets/**/*.ts",
+    "assets/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "temp"
+  ]
+}

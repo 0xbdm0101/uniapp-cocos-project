@@ -1,0 +1,16 @@
+{
+  "name": "smart-pet-cocos",
+  "version": "1.0.0",
+  "description": "SmartPet Cocos Creator 游戏项目",
+  "scripts": {
+    "dev": "echo '请使用 Cocos Creator Editor 打开此项目'",
+    "build": "echo '请在 Cocos Creator 中执行: 项目 → 构建发布 → Web Mobile'"
+  },
+  "devDependencies": {
+    "@cocos/creator-types": "^3.8.7",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "cocos-creator": ">=3.8.0"
+  }
+}

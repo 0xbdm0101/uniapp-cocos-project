@@ -1,0 +1,14 @@
+{
+  "name": "smart-pet",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:uni": "pnpm --filter uni-app dev:h5",
+    "dev:cocos": "echo '请用 Cocos Creator 打开 cocos-game 目录'",
+    "type-check": "pnpm -r type-check"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  }
+}

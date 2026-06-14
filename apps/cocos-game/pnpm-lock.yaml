@@ -1,0 +1,32 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@cocos/creator-types':
+        specifier: ^3.8.7
+        version: 3.8.7
+      typescript:
+        specifier: ^5.9.3
+        version: 5.9.3
+
+packages:
+
+  '@cocos/creator-types@3.8.7':
+    resolution: {integrity: sha512-QTtuC+w1s1yQ8DPlgFSiIGS+Pko6v2QdrrQRN8/SttEBo53JjyXEWHXpRkg1lGiHq0u/aadm0cN/Y4jtEmis/w==}
+
+  typescript@5.9.3:
+    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
+snapshots:
+
+  '@cocos/creator-types@3.8.7': {}
+
+  typescript@5.9.3: {}
