@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "dev": "bash scripts/dev.sh",
     "dev:uni": "pnpm --filter uni-app dev:h5",
-    "dev:cocos": "echo '请用 Cocos Creator 打开 cocos-game 目录'",
-    "type-check": "pnpm -r type-check"
+    "dev:cocos": "echo '请用 Cocos Creator 打开 apps/cocos-game 目录'",
+    "type-check": "pnpm -r type-check",
+    "build:h5": "pnpm --filter uni-app build:h5",
+    "build:mp-weixin": "pnpm --filter uni-app build:mp-weixin",
+    "clean": "pnpm -r exec rm -rf node_modules dist build temp .DS_Store"
   },
   "engines": {
     "node": ">=18",

@@ -8,6 +8,10 @@ node_modules
 dist
 build
 *.local
+temp
+
+# pnpm
+pnpm-lock.yaml
 
 # IDE
 .vscode
