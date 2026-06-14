@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, onMounted, onUnmounted } from 'vue'
 import { getGameRuntimeUrl } from '@/config/runtime'
 
 /**
@@ -76,10 +76,28 @@ function onPostMessage(e: any) {
   }
 }
 
+/** H5 环境监听 iframe 消息 */
+function handleH5Message(event: MessageEvent) {
+  const data = event.data as GameMessage | undefined
+  if (data?.type) {
+    emit('message', data)
+  }
+}
+
+// #ifdef H5
+onMounted(() => {
+  window.addEventListener('message', handleH5Message)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('message', handleH5Message)
+})
+// #endif
+
 /** 向 webview 发送消息 */
 function sendMessage(data: GameMessage) {
   // #ifdef H5
-  const iframe = document.querySelector('uni-webview iframe') as HTMLIFrameElement
+  const iframe = document.querySelector('iframe') as HTMLIFrameElement
   iframe?.contentWindow?.postMessage(data, '*')
   // #endif
 

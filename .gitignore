@@ -13,6 +13,13 @@ temp
 # pnpm
 pnpm-lock.yaml
 
+# Cocos Creator
+library/
+temp/
+profiles/
+.creator/
+NewProject/
+
 # IDE
 .vscode
 .idea
