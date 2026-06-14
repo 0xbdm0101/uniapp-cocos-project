@@ -1,0 +1,12 @@
+{
+  "name": "smart-pet-runtime",
+  "version": "1.0.0",
+  "description": "SmartPet Cocos Creator Runtime",
+  "scripts": {
+    "dev": "echo 'Please open this project in Cocos Creator Editor'",
+    "build": "echo 'Please build this project in Cocos Creator Editor'"
+  },
+  "engines": {
+    "cocos-creator": ">=3.8.0"
+  }
+}
