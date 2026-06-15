@@ -34,7 +34,9 @@ export class PetManager extends Component {
   private animComp: Animation | null = null
 
   onLoad() {
-    this.animComp = this.getComponent(Animation)
+    // Animation 组件在 Pet 子节点上
+    const petNode = this.node.getChildByName('Pet')
+    this.animComp = petNode?.getComponent(Animation) ?? this.getComponent(Animation)
   }
 
   /** 获取状态 */
@@ -63,14 +65,13 @@ export class PetManager extends Component {
     return this.getStatus()
   }
 
-  /** 播放坐叫动画，播完回到待机 */
+  /** 播放坐叫动画，1.5秒后切回待机 */
   private playSitBark() {
     if (!this.animComp) return
     this.animComp.play('dog_sit_bark')
-    // 动画播完后切回待机
-    this.animComp.once(Animation.EventType.FINISHED, () => {
+    this.scheduleOnce(() => {
       this.animComp?.play('dog_sit_look')
-    })
+    }, 1.5)
   }
 
   /** 触摸 */
