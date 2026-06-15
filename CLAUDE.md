@@ -43,10 +43,28 @@ MainScene
 
 ## 工作日志
 
-### 2025-06-15
+### 2026-06-15
 - [x] 项目启动成功，uni-app 运行在 http://localhost:5174/
 - [x] 读取 Cocos Creator 场景结构，确认 Canvas 下 2 个精灵 + 3 个自定义脚本
-- [ ] **待做：宠物动画增强**
-  - 无互动时：狗狗重复哈气动画帧循环
-  - 喂食时：根据饱腹程度显示气泡对话
-  - 触摸时：眨眼动画
+- [x] **宠物动画素材整理**
+  - 从 `dog/` 目录的 x4 GIF 拆帧，生成 7 个动画目录（dog_sit, dog_sit_bark, dog_sit_look, dog_stand_bark, dog_stand_look, dog_walk, dog_sprite_sheet）
+  - 删除 x1/x2 低分辨率 GIF，只保留 x4
+  - 清理已废弃的 dog-idle 系列资源及场景引用
+- [x] **初始状态改为 dog_sit_look**
+  - 场景 Animation 组件添加 dog_sit_look 和 dog_walk 两个剪辑
+  - 默认剪辑设为 dog_sit_look
+- [x] **喂食触发动画**
+  - PetManager.feed() 播放 dog_sit_bark 动画
+  - 1.5 秒后自动切回 dog_sit_look
+  - Animation 组件从 Pet 子节点获取
+
+### 待做
+- [ ] 宠物交互动画（设计待定）
+  - 当前可用动画目录（`resources/pets/`）：
+    - `dog_sit/` — 坐下
+    - `dog_sit_bark/` — 坐着叫
+    - `dog_sit_look/` — 坐着看（当前初始状态）
+    - `dog_stand_bark/` — 站立叫
+    - `dog_stand_look/` — 站立看
+    - `dog_walk/` — 走路
+    - `dog_sprite_sheet/` — 精灵图集
