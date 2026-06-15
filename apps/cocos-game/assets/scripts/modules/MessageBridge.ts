@@ -1,4 +1,3 @@
-/// <reference types="@cocos/creator-types/engine" />
 import { _decorator, Component } from 'cc'
 
 const { ccclass } = _decorator

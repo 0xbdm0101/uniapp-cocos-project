@@ -1,7 +1,7 @@
-/// <reference types="@cocos/creator-types/engine" />
 import { _decorator, Component, Node } from 'cc'
 import { MessageBridge } from './modules/MessageBridge'
 import { PetManager } from './modules/PetManager'
+import { PetAnimations } from './modules/PetAnimations'
 
 const { ccclass, property } = _decorator
 
@@ -17,12 +17,20 @@ export class GameManager extends Component {
   @property(PetManager)
   pet: PetManager | null = null
 
+  @property(PetAnimations)
+  animations: PetAnimations | null = null
+
   onLoad() {
     // 注册消息处理
     this.bridge?.setHandler(this.handleMessage.bind(this))
 
     // 启动宠物动画
     this.pet?.startBreathing()
+
+    // 初始化动画系统
+    if (this.animations && this.pet) {
+      this.pet.animations = this.animations
+    }
 
     // 通知 UI 就绪
     this.bridge?.notifyReady()
